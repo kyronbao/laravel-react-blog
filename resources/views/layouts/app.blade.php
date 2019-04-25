@@ -18,6 +18,10 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    @if (env('APP_ENV') == 'production')
+    {{--浏览器报错blocked:mixed-content 反向代理https加密时对静态文件js,css等升级加密--}}
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    @endif
 
     <title>@yield('title', setting('web_name', 'Laravel'))</title>
 
