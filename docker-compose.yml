@@ -33,7 +33,7 @@ services:
     image: nginx:1.14.2-alpine
     container_name: web
     ports:
-      - "80:80"
+      - "8043:8043"
     depends_on:
       - app
     volumes:
